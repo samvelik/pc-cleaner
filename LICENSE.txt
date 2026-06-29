@@ -1,0 +1,13 @@
+PC Cleaner - End User License Agreement (EULA)
+
+Copyright (c) 2025. All rights reserved.
+
+This software is provided "as is", without warranty of any kind, express or implied, 
+including but not limited to the warranties of merchantability, fitness for a 
+particular purpose and noninfringement.
+
+By installing this software, you agree to use it at your own risk.
+
+Permission is granted to use this software for personal and commercial purposes.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

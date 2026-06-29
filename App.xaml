@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="Cleaner.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cleaner">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                
+                <!-- English strings -->
+                <ResourceDictionary>
+                    <!-- Button Styles with Press Effect -->
+                    <Style x:Key="AnimatedButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+                        <Setter Property="Transitions">
+                            <Setter.Value>
+                                <TransitionCollection>
+                                    <RepositionThemeTransition/>
+                                    <ContentThemeTransition/>
+                                </TransitionCollection>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                    </Style>
+                    
+                    <Style x:Key="AnimatedAccentButtonStyle" TargetType="Button" BasedOn="{StaticResource AccentButtonStyle}">
+                        <Setter Property="Transitions">
+                            <Setter.Value>
+                                <TransitionCollection>
+                                    <RepositionThemeTransition/>
+                                    <ContentThemeTransition/>
+                                </TransitionCollection>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                    </Style>
+                </ResourceDictionary>
+                
+                <ResourceDictionary>
+                    <x:String x:Key="AppTitle">PC Cleaner</x:String>
+                    <x:String x:Key="CleanButton">Clean</x:String>
+                    <x:String x:Key="CalculateButton">Calculate</x:String>
+                    <x:String x:Key="SelectAllButton">Select All</x:String>
+                    <x:String x:Key="DeselectAllButton">Deselect All</x:String>
+                    <x:String x:Key="TotalSize">Total:</x:String>
+                    <x:String x:Key="Calculating">Calculating...</x:String>
+                    <x:String x:Key="CategoryBasic">Basic Cleaning</x:String>
+                    <x:String x:Key="CategoryNvidia">NVIDIA &amp; DirectX</x:String>
+                    <x:String x:Key="CategorySystem">System Files</x:String>
+                    <x:String x:Key="CategoryHistory">History</x:String>
+                    <x:String x:Key="WindowsTemp">Windows Temp</x:String>
+                    <x:String x:Key="WindowsTempDesc">Temporary Windows files</x:String>
+                    <x:String x:Key="UserTemp">User Temp</x:String>
+                    <x:String x:Key="UserTempDesc">User temporary files</x:String>
+                    <x:String x:Key="RecycleBin">Recycle Bin</x:String>
+                    <x:String x:Key="RecycleBinDesc">Empty recycle bin</x:String>
+                    <x:String x:Key="BrowserCache">Browser Cache</x:String>
+                    <x:String x:Key="BrowserCacheDesc">Chrome, Firefox, Edge cache</x:String>
+                    <x:String x:Key="WindowsUpdate">Windows Update</x:String>
+                    <x:String x:Key="WindowsUpdateDesc">Old update files</x:String>
+                    <x:String x:Key="NvidiaCache">NVIDIA Cache</x:String>
+                    <x:String x:Key="NvidiaCacheDesc">Shader cache and profiles</x:String>
+                    <x:String x:Key="NvidiaInstallers">NVIDIA Installers</x:String>
+                    <x:String x:Key="NvidiaInstallersDesc">Old driver installers</x:String>
+                    <x:String x:Key="AmdCache">AMD Cache</x:String>
+                    <x:String x:Key="AmdCacheDesc">AMD shader cache</x:String>
+                    <x:String x:Key="DirectXCache">DirectX Cache</x:String>
+                    <x:String x:Key="DirectXCacheDesc">DirectX shader cache</x:String>
+                    <x:String x:Key="Prefetch">Prefetch</x:String>
+                    <x:String x:Key="PrefetchDesc">App preload files</x:String>
+                    <x:String x:Key="WindowsStore">Windows Store</x:String>
+                    <x:String x:Key="WindowsStoreDesc">Store cache</x:String>
+                    <x:String x:Key="DeliveryOptimization">Delivery Optimization</x:String>
+                    <x:String x:Key="DeliveryOptimizationDesc">Update delivery cache</x:String>
+                    <x:String x:Key="EventLogs">Event Logs</x:String>
+                    <x:String x:Key="EventLogsDesc">Application, System, Security logs</x:String>
+                    <x:String x:Key="NetworkUsage">Network Usage</x:String>
+                    <x:String x:Key="NetworkUsageDesc">Network statistics (SRUDB.dat)</x:String>
+                    <x:String x:Key="RegistryHistory">Registry History</x:String>
+                    <x:String x:Key="RegistryHistoryDesc">MUICache, RunMRU, TypedPaths</x:String>
+                    <x:String x:Key="RecentFiles">Recent Files</x:String>
+                    <x:String x:Key="RecentFilesDesc">Recent files history</x:String>
+                    <x:String x:Key="JumpLists">Jump Lists</x:String>
+                    <x:String x:Key="JumpListsDesc">Taskbar jump lists</x:String>
+                    <x:String x:Key="LogTitle">Operation Log</x:String>
+                    <x:String x:Key="ClearLog">Clear Log</x:String>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
