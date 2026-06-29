@@ -55,4 +55,21 @@
   <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
   <PublishTrimmed>false</PublishTrimmed>
 </PropertyGroup>
+
+<!-- WinUI XAML resources (.xbf, .pri) are not copied to publish by default -->
+<Target Name="CopyWinUIResourcesToPublish" AfterTargets="Publish">
+  <Copy
+    SourceFiles="$(OutputPath)App.xbf;$(OutputPath)MainWindow.xbf;$(OutputPath)$(AssemblyName).pri"
+    DestinationFolder="$(PublishDir)"
+    SkipUnchangedFiles="true"
+    Condition="Exists('$(OutputPath)MainWindow.xbf')" />
+  <ItemGroup>
+    <_PublishAssetFiles Include="$(OutputPath)Assets\**\*" />
+  </ItemGroup>
+  <Copy
+    SourceFiles="@(_PublishAssetFiles)"
+    DestinationFiles="@(_PublishAssetFiles->'$(PublishDir)Assets\%(RecursiveDir)%(Filename)%(Extension)')"
+    SkipUnchangedFiles="true"
+    Condition="Exists('$(OutputPath)Assets')" />
+</Target>
 </Project>

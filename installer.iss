@@ -6,7 +6,7 @@
 #define MyAppPublisher "samvelik"
 #define MyAppURL "https://github.com/samvelik/pc-cleaner"
 #define MyAppExeName "Cleaner.exe"
-#define MyAppBuildPath "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\publish"
+#define MyAppBuildPath "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -46,10 +46,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-; Copy ALL files and subdirectories from publish folder (self-contained deployment)
-Source: "{#MyAppBuildPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-; Ensure assets are included even if publish output layout changes
-Source: "Assets\*"; DestDir: "{app}\Assets"; Flags: ignoreversion recursesubdirs createallsubdirs
+; Full self-contained build output (exclude duplicate publish subfolder)
+Source: "{#MyAppBuildPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "publish,\publish\*"
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

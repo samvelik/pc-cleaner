@@ -53,7 +53,7 @@ Run the app from Visual Studio or install the release build to see the UI.
 build-release.bat
 ```
 
-Output: `bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\publish\Cleaner.exe`
+Output: `bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\Cleaner.exe`
 
 ### Create installer
 

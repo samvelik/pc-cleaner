@@ -5,9 +5,16 @@ echo ========================================
 echo.
 
 REM Check if Release build exists
-if not exist "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\publish\Cleaner.exe" (
+if not exist "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\Cleaner.exe" (
     echo ERROR: Release build not found!
     echo Please run build-release.bat first
+    pause
+    exit /b 1
+)
+
+if not exist "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\MainWindow.xbf" (
+    echo ERROR: WinUI resources missing from build output!
+    echo Please run build-release.bat again
     pause
     exit /b 1
 )
