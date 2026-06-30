@@ -63,7 +63,7 @@ Requires [Inno Setup 6](https://jrsoftware.org/isdl.php).
 build-installer.bat
 ```
 
-Output: `installer_output\PCCleaner_Setup_1.0.0.exe`
+Output: `installer_output\PCCleaner_Setup_1.0.1.exe`
 
 | Script | Description |
 |--------|-------------|
