@@ -2,7 +2,7 @@
 ; Created for Inno Setup 6.x
 
 #define MyAppName "PC Cleaner"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.1"
 #define MyAppPublisher "samvelik"
 #define MyAppURL "https://github.com/samvelik/pc-cleaner"
 #define MyAppExeName "Cleaner.exe"

@@ -40,6 +40,18 @@ echo.
 
 REM Step 4: Create installer
 echo [4/4] Creating installer...
+if not exist "%INNO_PATH%" (
+    echo ERROR: Inno Setup 6 not found!
+    pause
+    exit /b 1
+)
+
+if not exist "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\MainWindow.xbf" (
+    echo ERROR: MainWindow.xbf missing - WinUI resources not built!
+    pause
+    exit /b 1
+)
+
 "%INNO_PATH%" installer.iss
 if %errorlevel% neq 0 (
     echo ERROR: Installer creation failed!

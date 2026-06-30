@@ -31,6 +31,12 @@
   <Manifest Include="$(ApplicationManifest)" />
 </ItemGroup>
 
+<ItemGroup>
+  <None Update="App.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </None>
+</ItemGroup>
+
 <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
   <ProjectCapability Include="Msix" />
 </ItemGroup>
@@ -38,12 +44,6 @@
 <ItemGroup>
   <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
   <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
-</ItemGroup>
-
-<ItemGroup>
-  <None Update="App.xaml">
-    <Generator>MSBuild:Compile</Generator>
-  </None>
 </ItemGroup>
 
 <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">

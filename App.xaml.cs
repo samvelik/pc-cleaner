@@ -1,7 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using System;
 using System.IO;
-using Windows.Storage;
 using Cleaner.Services;
 
 namespace Cleaner
@@ -38,6 +37,8 @@ namespace Cleaner
         {
             try
             {
+                ValidateDeploymentFiles();
+
                 _window = new MainWindow();
                 _window.Activate();
             }
@@ -47,6 +48,24 @@ namespace Cleaner
                 System.Diagnostics.Debug.WriteLine(message);
                 LogError(message);
                 throw;
+            }
+        }
+
+        private static void ValidateDeploymentFiles()
+        {
+            var baseDir = AppContext.BaseDirectory;
+            string[] requiredFiles = { "MainWindow.xbf", "App.xbf", "Cleaner.pri" };
+
+            foreach (var file in requiredFiles)
+            {
+                var path = Path.Combine(baseDir, file);
+                if (!File.Exists(path))
+                {
+                    throw new FileNotFoundException(
+                        $"Missing required file '{file}' in '{baseDir}'. " +
+                        "Please reinstall PC Cleaner from the latest installer.",
+                        path);
+                }
             }
         }
 
